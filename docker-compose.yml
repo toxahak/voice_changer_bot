@@ -1,0 +1,14 @@
+version: "3.3"
+
+services:
+  tvb:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/usr/app
+      - /usr/app/node_modules
+    env_file:
+      - ./config.env
+    ports:
+      - 80
